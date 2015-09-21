@@ -2,17 +2,19 @@
 #include <limits.h>
 #include <math.h>
 
-int MAX = 100;
+const int MAX = 100;
 
 int string_para_inteiro(char s[]){
-	int tamanho = 0, i = 0, num = 0;
+	int tamanho = 0, i = 0, num = 0, ele = 0;
 	
 	while(s[tamanho] != 0){
 		tamanho++;
 	}
 	
-	for(i=0; i<tamanho; i++){
-		num += (s[i] - '0') * pow(10, (tamanho - i - 1))
+	tamanho--;
+	
+	for(i=0; i<tamanho; i++){		
+		num += ((s[i] - '0') * (pow(10, (tamanho - i - 1))));
 	}
 	
 	return num;
@@ -26,7 +28,7 @@ int main(){
 	fgets(str, sizeof(str), stdin);
 	
 	num = string_para_inteiro(str);
-	printf("%d", num);
+	printf("Introduziu o nr: %d\n", num);
 	
 	return 0;
 }
