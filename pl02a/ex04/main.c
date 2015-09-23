@@ -5,8 +5,6 @@ int ex4(char *end);
 int main(){
 	
 	char string[255];
-	char *a;
-	a = string;
 	
 	string[0] = 'a';
 	string[1] = 'B';
@@ -14,21 +12,22 @@ int main(){
 	string[3] = 'l';
 	string[4] = 'x';
 	
-	ex4(a);
-	
+	ex4(string);
+	return 0;	
 }
 
 int ex4(char *end){
 	int i;
-	for (i = 0; i < 5; i++){	
+	
+	while (*end != 0){
+		
 		if(*end>64 && *end<91){
 			*end = *end +32;
 			printf("%c", *end);
 		}else{
 			printf("%c", *end);	
 		}
+		
 		end++;
 	}
-	
-	
 }
