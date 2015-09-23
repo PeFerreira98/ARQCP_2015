@@ -5,6 +5,6 @@ void funcao(){
 }
 
 int main(){
-	printf("main");
+	printf("main ALUNO2");
 	return 0;
 }
