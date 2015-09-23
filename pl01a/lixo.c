@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void funcao(){
-	printf("funcao");
+	printf("funcao Aluno1");
 }
 
 int main(){
