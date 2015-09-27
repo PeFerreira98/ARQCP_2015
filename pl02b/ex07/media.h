@@ -1,0 +1,1 @@
+void ex07(int *x, int size);
