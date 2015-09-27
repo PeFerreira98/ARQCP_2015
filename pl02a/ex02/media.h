@@ -1,0 +1,1 @@
+void lerNum(int vec[]);
