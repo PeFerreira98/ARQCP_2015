@@ -9,10 +9,10 @@ void ex07(int *x, int size){
 
 	for(i=0; i < size-1; i++){
 		for(j=0; j < size-i-1; j++){
-			if(*(x+j) > *(x+j+1)){
-				swap = *(x+j);
-				*(x+j) = *(x+j+1);
-				*(x+j+1) = swap;
+			if(x[j] > x[j+1]){
+				swap = x[j];
+				x[j] = x[j+1];
+				x[j+1] = swap;
 			}
 		}
 	}
