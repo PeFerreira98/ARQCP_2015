@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-int ex3(int *end, int num);
+#include "media.h"
 
 int main(){
 	int vec[10];
@@ -14,19 +13,7 @@ int main(){
 	vec[4] = 4;
 	
 	ex3(a, 5);
-	
-}
 
-int ex3(int * end, int num){
-	int i;
-	
-	for (i = 0; i < num; i++){
-		
-		if(*end%2 == 0) printf("%d ; ", *end);
-		
-		end++;
-		
-	}
-	
+	return 0;
 }
 

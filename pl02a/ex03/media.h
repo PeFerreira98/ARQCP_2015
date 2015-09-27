@@ -1,0 +1,1 @@
+void ex3(int *end, int num);
