@@ -1,0 +1,1 @@
+int contabilizar(int *vec);
