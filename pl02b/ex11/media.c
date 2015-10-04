@@ -22,12 +22,29 @@ void high_to_low(char *str, int s){
 	}
 }
 
+int del_spaces(char *str, int s){
+	int i=0, j=0;
+	
+	for(i=0; i<s; i++){
+		if(*(str+i) == ' '){
+			for(j=i; j<s; j++){
+				*(str+j) = *(str+(j+1));			
+			}
+			s--;
+		}
+	}
+	
+	return s; //retorna o novo tamanho da string (sem espaços)
+}
+
 int ex11(char *str){
 	int res=1, size=0, i=0;
 	
 	size = str_size(str);
 	
 	high_to_low(str, size);
+
+	size = del_spaces(str, size);
 
 	for(i=0; i<size; i++){
 		if( *(str+i) != *(str+(size-1-i)) ){
