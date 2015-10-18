@@ -8,8 +8,8 @@
 
 test:
 	movl A, %eax
-	movl B, %ebx
-	addl %ebx, %eax
+	movl B, %edx
+	
 
 	ret
 
