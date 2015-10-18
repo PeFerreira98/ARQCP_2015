@@ -9,23 +9,23 @@
 .global soma	
 
 aumentar_temp:
-	subl %ecx, %eax
-	imull $180, %eax
+	subw %cx, %ax
+	imulw $180, %ax
 	
 	ret
 	
 diminuir_temp:
-	subl %eax, %ecx
-	imull $120, %ecx
-	movl %ecx, %eax
+	subw %ax, %cx
+	imulw $120, %cx
+	movw %cx, %ax
 	
 	ret
 	
 soma:
-	movl temp, %ecx
-	movl temp_p, %eax
+	movw temp, %cx
+	movw temp_p, %ax
 	
-	cmpl %ecx, %eax
+	cmpw %cx, %ax
 	jg aumentar_temp
 	jl diminuir_temp
 	
