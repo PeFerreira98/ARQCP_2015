@@ -40,24 +40,29 @@ f2:
 	ret
 	
 f3ge:
-	addl %eax, %ecx
-	addl $1, %eax
-	mov AX, %ecx
-	mov CX, %eax
-	div CX
+	imull %ecx, %eax
+	movl $0, %edx
+	movl i, %ebx
+	addl $1, %ebx
+	
+	div %ebx
+	
 	ret
 
 f3:
 	movl i, %eax
 	movl j, %ecx
 	
-	cmpl %eax, %ecx
+	cmpl %ecx, %eax
 	jge f3ge
 	
 	imull %ecx, %eax
-	movl i, %edx
-	addl %edx, %ecx
+	movl $0, %edx
+	movl i, %ebx
+	addl %ebx, %ecx
 	addl $2, %ecx
+	
+	div  %ecx
 	
 	
 	

@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include "soma.h"
 
-int i=10, j = 6;
+int i=0;
 
 int main(void){
 	int h = 0;
-	h = f3();
+	printf("Numero:");
+	scanf("%d", &i);
+	h = soma();
 	
-	printf("f: %d", h);
+	printf(": %d\n", h);
 
 	return 0;
 }
