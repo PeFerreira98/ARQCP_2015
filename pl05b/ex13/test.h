@@ -1,0 +1,1 @@
+long int test (void);
