@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include "test.h"
 
-int A=0, B=0;
+long int A=0, B=0;
 
 int main(void){
 	unsigned long long int res = 0;
 	printf("Valor A:");
-	scanf("%d", &A);
+	scanf("%li", &A);
 
 	printf("Valor B:");
-	scanf("%d", &B);
+	scanf("%li", &B);
 
 	res = test();
 
