@@ -2,9 +2,6 @@
 
 .global op1
 
-CONST: 
-	.int 0
-
 .section .text
 
 .global soma	
@@ -17,8 +14,10 @@ soma:
 	imull $3, %eax
 
 	addl $12, %eax
-
-	idiv $3
+	
+	movl $3, %ecx
+	
+	divl %ecx
 
 	addl $5, %eax
 

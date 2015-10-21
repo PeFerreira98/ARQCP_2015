@@ -12,6 +12,7 @@ test:
 	movl C, %esi
 	movl D, %edi
 	movl $0, %eax
+	movl $0, %edx
 
 	imull %esi, %ecx
 
