@@ -14,16 +14,16 @@ soma:
 loop:
 	movb (%esi), %bl
 	
-	cmpb $'b', %bl
+	cmpb $'b', %bl		#check se letra é 'b'
 	je troca_v
 
-	cmpb $'v', %bl
+	cmpb $'v', %bl		#check se letra é 'v'
 	je troca_b
-
-	movb %bl, (%edi)
+	
+	movb %bl, (%edi)	
 
 	cmpb $0, (%esi)
-	je fim	
+	je fim			#salta para o fim
 
 	addl $1, %esi
 	addl $1, %edi
