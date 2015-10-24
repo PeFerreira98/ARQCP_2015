@@ -2,6 +2,8 @@
 .section .data
 
 .global ptr1
+count:
+	.int 0
 
 .section .text
 
@@ -22,6 +24,7 @@ loop:
 	je fim
 	
 	incb %cl
+	incl count
 	movb %cl, (%esi)
 	addl $1, %esi
 	jmp loop
@@ -31,4 +34,5 @@ inc:
 	jmp loop
 	
 fim:
- ret
+	movl count, %eax
+	ret
