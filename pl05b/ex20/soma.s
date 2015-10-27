@@ -34,7 +34,7 @@ f2:
 	movl i, %eax
 	movl j, %ecx
 	
-	cmpl %ecx, %eax
+	cmpl %eax, %ecx
 	jge f2ge
 	addl $1, %ecx
 	imull %ecx, %eax
