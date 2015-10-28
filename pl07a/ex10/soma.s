@@ -7,20 +7,23 @@
 .global soma
 
 soma:
-	movl ptrvec, %esi
-	movl num, %edi
-	movl x, %ebx
+	movl ptrvec, %eax
+	movw num, %cx
+	movw x, %bx
 	
 loop:
-	cmpl %ebx, %edi 
-	je fim			#salta para o fim
-	
-	addl (%esi), %eax	
+	cmpw $0, %cx
+	je not_found
 
-	addl $4, %esi
-	addl $1, %ebx
-	
+	cmpw (%eax), %bx
+	je fim			#salta para o fim	
+
+	addl $2, %eax
+	decw %cx
 	jmp loop	
+
+not_found:
+	movl $0, %eax
 
 fim:	
 	ret
