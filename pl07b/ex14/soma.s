@@ -16,7 +16,7 @@ diferentes:
 	
 loop:
 	addl $2, %esi
-	movl ptrvec2, %edi		#inicializa-se ptrvec2 porque a cada posição de ptrvec1 queremos ler tudo de ptrvec2
+	movl ptrvec2, %edi		#inicializa-se edi porque a cada posição de ptrvec1 queremos ler tudo de ptrvec2
 	
 	cmpl $0, aux		
 	je fim					#salta para o fim

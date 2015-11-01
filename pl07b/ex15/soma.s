@@ -1,62 +1,52 @@
 .section .data
 
-.global ptrvec1, ptrvec2, ptrvec3
+.global ptrvec1, ptrvec2, ptrvec3, num, aux
 
 .section .text
 
-.global soma
+.global comuns
 
-soma:
+comuns:
 	movl ptrvec1, %esi
-	movl ptrvec2, %edi
 	movl ptrvec3, %ebx
 	movl num, %ecx
 	movl $0, %eax
-	movl $0, %edx
+	
+	subl $4, %esi			#tem-se que se subtrair senão nunca conseguia-mos ver o primeiro valor
+	
 	
 loop:
-	cmpl $0, %ecx		#caso contador 0,
-	je fim				#salta para o fim	
-
-	pushl %ecx			#guarda o 1ºcontador na stack (supostamente)
-
-	movl (%esi), %edx	
-	movl num, %ecx		#inicia o 2ºcontador
+	addl $4, %esi
+	movl ptrvec2, %edi		#inicializa-se edi porque a cada posição de ptrvec1 queremos ler tudo de ptrvec2
 	
-loop2:
-	cmpl $0, %ecx		#caso contador 0,
-	je not_found		#signif nr não foi encontrado no 2ºarray
-
+	cmpl $0, aux		
+	je fim					#salta para o fim
+	
+	decl aux	
+	movl num, %ecx			#inicializa-se o contador do loop 2 para nao começar a zero na segunda vez do ciclo
+	
+	
+loop2:	
+	cmpl $0, %ecx
+	je loop					#caso chegue ao fim
+	
+	movl (%esi), %edx
 	cmpl %edx, (%edi)
-	je add_elem
-
-	addl $4, %edi		#prox posição do 2º array
+	je found				#caso encontre
+	
+	addl $4, %edi
 	decl %ecx
 	jmp loop2
-
-
-add_elem:
-	movw %dx, (%ebx)	#Guarda nr repetido no 3º array
-	incl %eax
 	
-	addl $4, %esi		#prox posição do 1º array
-	addl $4, %ebx		#prox posição do 3º array
 	
-	popl %ecx			#ecx volta a ter o valor do 1ºcontador (supostamente)
-	decl %ecx
-	
-	jmp loop
-	
-not_found:
-	addl $4, %esi		#prox posição do 1º array
-
-	popl %ecx			#ecx volta a ter o valor do 1ºcontador (supostamente)
-	decl %ecx		
-	
+found:
+	movl (%esi), %edx
+	movw %dx, (%ebx)
+		
+	addl $4, %ebx
+	addl $1, %eax			#contador de numero iguais
 	jmp loop	
+	
 	
 fim:	
 	ret
-
-
-

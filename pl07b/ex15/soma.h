@@ -1,1 +1,1 @@
-int soma(void);
+int comuns(void);
