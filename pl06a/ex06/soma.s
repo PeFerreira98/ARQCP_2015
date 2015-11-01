@@ -18,7 +18,7 @@ loop_1:
 	movb %bl, (%ecx)	
 
 	cmpb $0, (%esi)
-	je loop_2		#salta para o loop2
+	je loop_2			#salta para o loop2
 
 	addl $1, %esi
 	addl $1, %ecx
@@ -30,7 +30,7 @@ loop_2:
 	movb %bl, (%ecx)	
 
 	cmpb $0, (%edi)
-	je fim			#salta para o fim
+	je fim				#salta para o fim
 
 	addl $1, %edi
 	addl $1, %ecx

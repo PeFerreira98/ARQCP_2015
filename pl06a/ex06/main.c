@@ -15,11 +15,20 @@ int main(void){
 	ptr3 = str3;
 
 	i = soma();
+	
+	for(i=0; i<strlen(str1); i++){
+		printf("%c", str1[i]);
+	}
+	printf("\n");
+	
+	for(i=0; i<strlen(str2); i++){
+		printf("%c", str2[i]);
+	}
+	printf("\n");
 
 	for(i=0; i<strlen(str3); i++){
 		printf("%c", str3[i]);
 	}
-
 	printf("\n");
 
 	return 0;
