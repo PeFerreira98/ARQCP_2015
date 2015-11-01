@@ -20,7 +20,7 @@ int main(void){
 
 	res = comuns();
 
-	printf("%d\n", res);
+	printf("res  = %d\n", res);
 	
 	printf("vec1 = ");
 	for(i=0; i<num; i++){
