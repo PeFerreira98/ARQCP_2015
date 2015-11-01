@@ -1,13 +1,13 @@
 .section .data
 
-.global ptrvec1
+.global ptrvec
 
 .section .text
 
-.global vec_corta
+.global preenche_vec
 
-vec_corta:
-	movl ptrvec1, %ebx
+preenche_vec:
+	movl ptrvec, %ebx
 	movl num, %ecx
 	movl $0, %eax		#contador
 	movl $0, %edi		#incrementa +1 para o ciclo e também para se saber as posições do vector

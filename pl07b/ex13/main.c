@@ -2,26 +2,26 @@
 #include <string.h>
 #include "soma.h"
 
-int *ptrvec1;
+int *ptrvec;
 int num = 10;
 
 
 int main(void){
-	int vec1[10] = {0,-2,999,-3,5,1000,7,1,65539,8};
+	int vec[10] = {0,-2,999,-3,5,1000,7,1,-65539,8};
 	int i = 0;	
-int count;
+	int count;
 
-	ptrvec1 = vec1;
+	ptrvec = vec;
 
 	for(i=0; i<num; i++){
-		printf("%d ", vec1[i]);
+		printf("%d ", vec[i]);
 	}
 	
 	printf("\n");
-	count = vec_corta();
+	count = preenche_vec();
 	
 	for(i=0; i<num; i++){
-		printf("%d ", vec1[i]);
+		printf("%d ", vec[i]);
 	}
 	
 	printf("\nModificações: %d\n", count);
