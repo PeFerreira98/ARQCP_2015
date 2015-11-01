@@ -3,9 +3,7 @@
 
 .global ptrvec
 .global num
-count:
-	.int 0
-	
+
 .section .text
 
 .global vec_pos
@@ -18,17 +16,17 @@ vec_pos:
 	
 loop:
 	cmpl $0, %ebx
-	jmp fim
+	je fim
 	
 	decl %ebx
 	
 	cmpl $10, (%ecx)
-	jge count_
+	jge count
 	
 	addl $4, %ecx
 	jmp loop
 	
-count_:
+count:
 	addl $1, %eax
 	addl $4, %ecx
 	jmp loop
