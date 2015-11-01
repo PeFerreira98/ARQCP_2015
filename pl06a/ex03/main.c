@@ -11,7 +11,7 @@ int main(void){
 	ptr1 = str1;
 	ptr2 = str2;
 
-	i = soma();
+	i = str_copy_p2();
 
 	for(i=0; i<20; i++){
 		printf("%c", str1[i]);

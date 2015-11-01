@@ -4,9 +4,9 @@
 
 .section .text
 
-.global soma
+.global str_copy_p
 
-soma:
+str_copy_p:
 	movl ptr1, %esi
 	movl ptr2, %edi
 	movl $0, %eax

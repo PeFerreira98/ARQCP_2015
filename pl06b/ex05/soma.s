@@ -3,14 +3,15 @@
 
 .global ptr1
 
+count:
+	.int 0
+
 .section .text
 
 .global encripta	
 
 encripta: 
-
 	movl ptr1, %esi
-	
 	
 loop:
 	movb (%esi), %cl
@@ -21,9 +22,12 @@ loop:
 	cmpb $0, %cl
 	je fim
 	
-	decb %cl
+	incb %cl			#incrementa caracter
+	incl count			#incrementa count
+	
 	movb %cl, (%esi)
-	addl $1, %esi
+	addl $1, %esi		#prox posição da str
+	
 	jmp loop
 	
 inc:
@@ -31,4 +35,5 @@ inc:
 	jmp loop
 	
 fim:
- ret
+	movl count, %eax
+	ret

@@ -6,7 +6,7 @@ char *ptr1;
 int main(void){
 	
 	int count = 0;
-	char str[] = "ab c dd aZeff ";
+	char str[] = "ab c dd aZeff  hvhj ";
 	
 	ptr1 = str;
 	

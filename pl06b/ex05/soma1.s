@@ -8,9 +8,9 @@ count:
 
 .section .text
 
-.global encripta	
+.global decifra
 
-encripta: 
+decifra: 
 	movl ptr1, %esi
 	
 loop:
@@ -22,7 +22,7 @@ loop:
 	cmpb $0, %cl
 	je fim
 	
-	incb %cl			#incrementa caracter
+	decb %cl			#decrementa caracter
 	incl count			#incrementa count
 	
 	movb %cl, (%esi)

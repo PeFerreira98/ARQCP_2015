@@ -18,8 +18,10 @@ ciclo:
 	movb (%esi), %cl #queremos só 1byte e não os 4Bytes apontados por %esi
 	cmpb $' ', %cl
 	je count
+	
 	cmpb $0, %cl
 	je fim
+	
 	addl $1, %esi
 	jmp ciclo
 	
