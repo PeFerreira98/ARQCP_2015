@@ -1,1 +1,1 @@
-int vec_corta(void);
+int preenche_vec(void);

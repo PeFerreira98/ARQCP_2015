@@ -3,6 +3,7 @@
 
 .global ptrvec
 .global num
+
 aux:
 	.int 0
 	
@@ -11,21 +12,21 @@ aux:
 .global vec_inc
 
 vec_inc: 
-
 	movl ptrvec, %eax
 	movl num, %edx
+	movl $0, %ecx
 	
 	
 loop:
-	cmpl aux, %edx
+	cmpl %ecx, %edx
 	je fim
 	
-	incl aux
 	incl (%eax)
+	
 	addl $4, %eax
+	incl %ecx
 	jmp loop
 
 	
 fim:
-	
 	ret

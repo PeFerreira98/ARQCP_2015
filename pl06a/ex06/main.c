@@ -14,7 +14,7 @@ int main(void){
 	ptr2 = str2;
 	ptr3 = str3;
 
-	i = soma();
+	i = str_cat();
 	
 	for(i=0; i<strlen(str1); i++){
 		printf("%c", str1[i]);

@@ -11,11 +11,12 @@ int main(void){
 
 	ptrvec = vec1;
 	num = 10;
-	x = 1;
+	x = 10;
 
-	res = soma();
+	res = vec_search();
 
-	printf("%p = %hd\n", res, *res);
+	if(res != 0)	printf("%p = %hd\n", res, *res);
+	else printf("res = 0\n");
 
 	return 0;
 }

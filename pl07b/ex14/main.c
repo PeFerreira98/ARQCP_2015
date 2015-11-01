@@ -18,7 +18,7 @@ int main(void){
 	
 	num = 10;
 
-	res = soma();
+	res = diferentes();
 
 	printf("res  = %d\n", res);
 	printf("vec1 = ");

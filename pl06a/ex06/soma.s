@@ -4,9 +4,9 @@
 
 .section .text
 
-.global soma
+.global str_cat
 
-soma:
+str_cat:
 	movl ptr1, %esi
 	movl ptr2, %edi
 	movl ptr3, %ecx

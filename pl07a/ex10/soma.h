@@ -1,1 +1,1 @@
-int* soma(void);
+int* vec_search(void);

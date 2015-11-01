@@ -1,1 +1,1 @@
-int soma(void);
+int str_cat(void);

@@ -15,10 +15,13 @@ int main(void){
 		printf ("%d", vec[i]);
 	}
 	printf("\n");
+	
 	vec_inc();
+	
 	for (i = 0; i < 5; i++){
 		printf ("%d", vec[i]);
 	}
+	printf("\n");
 	
 	return 0;
 }

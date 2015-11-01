@@ -4,15 +4,14 @@
 
 .section .text
 
-.global soma
+.global vec_sum
 
-soma:
+vec_sum:
 	movl ptrvec, %esi
 	movl num, %edi
 
 	movl $0, %eax
 	movl $0, %ebx
-#	movl $0, %ecx
 	
 
 loop:

@@ -12,7 +12,7 @@ int main(void){
 	ptrvec = vec1;
 	num = 10;
 
-	res = soma();
+	res = vec_sum();
 
 	for(i=0; i<10; i++){
 		printf("%d + ", vec1[i]);

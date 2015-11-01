@@ -4,9 +4,9 @@
 
 .section .text
 
-.global soma
+.global diferentes
 
-soma:
+diferentes:
 	movl ptrvec1, %esi
 	movl ptrvec2, %edi
 	movl ptrvec3, %ebx

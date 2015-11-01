@@ -1,1 +1,1 @@
-int soma(void);
+int vec_sum(void);

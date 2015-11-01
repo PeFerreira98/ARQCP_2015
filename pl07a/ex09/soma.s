@@ -3,6 +3,7 @@
 
 .global ptrvec
 .global num
+
 aux:
 	.int 0
 	

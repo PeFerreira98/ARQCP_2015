@@ -4,9 +4,9 @@
 
 .section .text
 
-.global soma
+.global vec_search
 
-soma:
+vec_search:
 	movl ptrvec, %eax
 	movw num, %cx
 	movw x, %bx

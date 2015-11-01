@@ -7,7 +7,7 @@ long int num = 5;
 int main(){
 	
 	int i, count;
-	long int vec[] = {2,15,3,14,5};
+	long int vec[] = {2,15,10,14,5};
 	
 	ptrvec = vec;
 	
@@ -16,7 +16,7 @@ int main(){
 	}
 	
 	count = vec_pos();
-	printf("\n%d\n", count);
+	printf("\nresult = %d\n", count);
 	
 	
 	return 0;
