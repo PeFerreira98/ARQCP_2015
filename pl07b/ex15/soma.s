@@ -15,31 +15,48 @@ soma:
 	movl $0, %edx
 	
 loop:
-	cmpl $0, %ecx
-	je fim			#salta para o fim	
+	cmpl $0, %ecx		#caso contador 0,
+	je fim				#salta para o fim	
 
-	movl (%esi), %edx
+	pushl %ecx			#guarda o 1ºcontador na stack (supostamente)
+
+	movl (%esi), %edx	
+	movl num, %ecx		#inicia o 2ºcontador
+	
+loop2:
+	cmpl $0, %ecx		#caso contador 0,
+	je not_found		#signif nr não foi encontrado no 2ºarray
+
 	cmpl %edx, (%edi)
 	je add_elem
 
-	addl $4, %esi
-	addl $4, %edi
+	addl $4, %edi		#prox posição do 2º array
 	decl %ecx
-	
-	jmp loop	
+	jmp loop2
+
 
 add_elem:
-	movw %dx, (%ebx)
-	
-	addl $4, %esi
-	addl $4, %edi
-	addl $4, %ebx
-	decl %ecx
+	movw %dx, (%ebx)	#Guarda nr repetido no 3º array
 	incl %eax
 	
+	addl $4, %esi		#prox posição do 1º array
+	addl $4, %ebx		#prox posição do 3º array
+	
+	popl %ecx			#ecx volta a ter o valor do 1ºcontador (supostamente)
+	decl %ecx
+	
 	jmp loop
+	
+not_found:
+	addl $4, %esi		#prox posição do 1º array
 
+	popl %ecx			#ecx volta a ter o valor do 1ºcontador (supostamente)
+	decl %ecx		
+	
+	jmp loop	
+	
 fim:	
 	ret
-	
+
+
 
