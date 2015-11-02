@@ -23,3 +23,4 @@ Dentro do diretorio de cada aula o aluno deve criar um subdiretorio para cada ex
 O nome desse subdiretorio deve iniciar pelas letras "ex" e ser seguido do numero que identifica
 o exercicio. Ex: "ex01"
   
+Submission closed for class pl07b
