@@ -1,6 +1,6 @@
 .section .data
 
-.global ptrvec
+.global ptrvec, count, num
 
 .section .text
 
@@ -11,7 +11,7 @@ vec_corta:
 	movl num, %ecx
 	movl $1000, %esi
 	movl $1, %edx
-	movl count, %edi
+	movl $0, %edi
 
 loop:
 	cmpl $0, %ecx
@@ -20,7 +20,9 @@ loop:
 	cmpl %esi, (%eax)
 	jge zerar
 	
-	cmpl %edx, 4(%eax)
+	movl 4(%eax), %ebx
+	
+	cmpl %edx, %ebx
 	jge zerar
 	
 	addl $8, %eax
@@ -33,6 +35,7 @@ zerar:
 	
 	addl $8, %eax
 	addl $1, %edi
+	decl %ecx
 	jmp loop
 
 fim:	

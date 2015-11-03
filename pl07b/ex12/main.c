@@ -4,12 +4,12 @@
 
 long long int *ptrvec;
 int num = 10;
-int count;
 
 int main(void){
-	long long int vec[10] = {0,2,999,3,5,1000,7,1,65539,8};
+	long long int vec[10] = {43000000000,2,999,3,5,1000,7,1,65539,8};
 	int i = 0;	
-
+	int count = 0;
+	
 	ptrvec = vec;
 
 	for(i=0; i<num; i++){
