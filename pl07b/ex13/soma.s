@@ -1,6 +1,7 @@
 .section .data
 
 .global ptrvec
+.global num
 
 .section .text
 
