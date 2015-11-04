@@ -6,8 +6,8 @@
 
 somatorio_n:
 
-	movl $0, %eax
-	movl 4(%esp), %ebx
+	movl $0, %eax			#Acumulador
+	movl 4(%esp), %ebx		#n
 	
 loop:	
 	cmpl $0, %ebx		
@@ -15,8 +15,8 @@ loop:
 	
 	addl %ebx, %eax
 	
-	cmpl $0, %ebx
-	js negative
+	cmpl $0, %ebx			#se n for negativo é necessario incrementar e nao decrementar
+	js negative				
 	
 	decl %ebx			
 	jmp loop
