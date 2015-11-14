@@ -1,7 +1,4 @@
 .section .data
-#decl variaveis
-var:					#-4(%ebp)
-	.int
 
 .section .text
 .global soma_multiplos_x_s
@@ -12,7 +9,6 @@ soma_multiplos_x_s:			#int soma_multiplos_x_s (char *vec, int x);
 #Prologue
 	pushl %ebp
 	movl %esp, %ebp
-	subl $4, %esp
 
 	pushl %ebx
 	pushl %esi
@@ -35,6 +31,8 @@ soma_multiplos_x_s:			#int soma_multiplos_x_s (char *vec, int x);
 	jne loop
 	movl $-1, %eax
 	jmp fim
+
+#ATE AQUI DA TUDO BEM (VALORES TESTADOS INDIVIDUALMENTE)
 	
 loop:
 	movl (%esi), %eax		#eax = *vec
