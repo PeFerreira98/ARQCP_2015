@@ -2,9 +2,9 @@
 
 #decl variaveis
 
-multiplica:
+multiplica:					#-4(%ebp)
 	.int
-soma:
+soma:						#-8(%ebp)
 	.int
 
 .section .text
@@ -17,9 +17,9 @@ calcula:
 	movl %esp, %ebp
 	subl $8, %esp
 
-	#pushl %ebx
-	#pushl %esi
-	#pushl %edi
+	pushl %ebx
+	pushl %esi
+	pushl %edi
 	
 	
 #Body
@@ -53,9 +53,9 @@ calcula:
 	
 
 #Epilogue
-	#popl %edi
-	#popl %esi
-	#popl %ebx
+	popl %edi
+	popl %esi
+	popl %ebx
 	
 	movl %ebp, %esp
 	popl %ebp

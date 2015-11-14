@@ -1,6 +1,9 @@
 
 .section .data
 
+z:							#-4(%ebp)
+	.int
+
 .section .text
 
 .global calc
@@ -11,7 +14,7 @@ calc:
 	movl %esp, %ebp
 	subl $4, %esp
 
-	#pushl %ebx
+	pushl %ebx
 	#pushl %esi
 	#pushl %edi
 	
@@ -34,7 +37,7 @@ calc:
 #Epilogue
 	#popl %edi
 	#popl %esi
-	#popl %ebx
+	popl %ebx
 	
 	movl %ebp, %esp
 	popl %ebp
