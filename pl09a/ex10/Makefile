@@ -1,7 +1,7 @@
 # variaveis
-INCLUDES = soma.h
-SOURCES = soma.s main.c
-OBJFILES = soma.o main.o
+INCLUDES = soma.h soma2.h
+SOURCES = soma.s main.c soma2.c
+OBJFILES = soma.o main.o soma2.o
 EXEC = psoma
 
 # regras de sufixo

@@ -8,5 +8,9 @@ int main(){
 	
 	printf("%d\n", res);
 	
+	res = menor_data_c(data1, data2);
+	
+	printf("%d\n", res);
+	
 	return 0;
 }

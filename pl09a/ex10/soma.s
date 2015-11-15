@@ -3,9 +3,9 @@
 
 .section .text
 
-.global conta_bits_um
+.global conta_bits_um_s
 
-conta_bits_um:
+conta_bits_um_s:
 #Prologue
 	pushl %ebp
 	movl %esp, %ebp
