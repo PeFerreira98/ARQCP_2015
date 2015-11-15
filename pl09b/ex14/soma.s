@@ -2,6 +2,7 @@
 .section .text
 .global junta_bits_s
 
+
 junta_bits_s:
 
 #Prologue
