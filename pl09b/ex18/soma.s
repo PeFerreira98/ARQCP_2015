@@ -1,5 +1,4 @@
 .section .data
-
 .section .text
 .global soma_multiplos_x_s
 
@@ -20,7 +19,7 @@ soma_multiplos_x_s:			#int soma_multiplos_x_s (char *vec, int x);
 	movl 12(%ebp), %ebx		#ebx = x
 	
 	movl $0, %edi			#edi = count
-	movb $0b00000000, %cl	#cl = MASK1 = 0x00
+	movb $0b00000000, %cl		#cl = MASK1 = 0x00
 	
 	andb %cl, %bl			#bl a 0
 	andb %cl, %bh			#bh a 0
@@ -39,13 +38,13 @@ loop:
 	cmpl $0, %eax			#if (eax == 0)
 	je end_loop					
 	
-	divl %ebx				#edx = edx:eax % ebx 
+	divl %ebx			#edx = edx:eax % ebx 
 	
 	cmpl $0, %edx			#if (edx==0)
 	je update_count			#count++ e vec++ basicamente
 	
 	movl $0, %edx			#reset edx
-	incl %esi				#vec++
+	incl %esi			#vec++
 	jmp loop
 
 update_count:
@@ -56,8 +55,8 @@ update_count:
 end_loop:
 	movl %edi, %eax			#eax = edi (count)
 
-
 fim:
+
 
 #Epilogue
 	popl %edi

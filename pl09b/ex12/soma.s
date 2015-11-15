@@ -1,26 +1,48 @@
 .section .data
-
 .section .text
+.global activa_bit_s
 
-.global activa_bit
+activa_bit_s:				#int activa_bit_s (int *vec, int pos);
+	
+#Prologue
+	pushl %ebp
+	movl %esp, %ebp
 
-activa_bit:
+	pushl %ebx
+	pushl %esi
+	#pushl %edi
 	
-	movl 4(%esp), %ecx
-	movl 8(%esp), %ebx
 	
-	movl (%ecx), %eax
-	ror $2, %eax		#roda pos-1 bits para a direita (Falta alterar o $2 por pos)
-	andl $1, %eax		#verifica se o ultimo bit é 1 ou 0
-	cmpl $1, %eax		
-	jne troca_bit		#dá jump caso seja 0
+#Body
+	movl 8(%ebp), %esi		#esi = vec
+	movb 12(%ebp), %cl		#cl = pos
 	
-	movl $0, %eax
+	movb $0x01, %ch			#ch = MASK = 0x01
 	
-	ret
+	movl (%esi), %ebx		#ebx = *vec
+	movl (%esi), %edx		#edx = *vec
+	
+	movl $0, %eax			#eax = 0
+	
+	rorl %cl, %ebx			#roda pos (cl) bits para a direita
+	orb %ch, %bl			#altera o bit menos significativo para 1
+	roll %cl, %ebx			#roda pos (cl) bits para a esquerda (voltando a rotação original)
+	
+	cmpl %ebx, %edx			#verifica se houve alteração do nr original
+	je fim					#se sim result = 0
+	
+	movl $1, %eax 			#caso valor alterado, result = 1
+	movl %ebx, (%esi)		#*vec = ebx
 
-troca_bit:
-	ror $2, (%ecx)
-	orl $1, (%ecx)
-	movl $1, %eax
+fim:
+
+	
+#Epilogue
+	#popl %edi
+	popl %esi
+	popl %ebx
+	
+	movl %ebp, %esp
+	popl %ebp
+	
 	ret

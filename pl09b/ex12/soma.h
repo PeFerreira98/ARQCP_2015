@@ -1,1 +1,1 @@
-int activa_bit(int *vec, int pos);
+int activa_bit_s (int *vec, int pos);
