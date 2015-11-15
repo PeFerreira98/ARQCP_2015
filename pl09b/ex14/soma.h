@@ -1,1 +1,1 @@
-int junta_bits(int a, int b, int pos);
+int junta_bits_s(int a, int b, int pos);
