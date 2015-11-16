@@ -1,13 +1,21 @@
 .section .data
-
 .section .text
-
 .global somatorio_n
 
 somatorio_n:
 
+#Prologue
+	pushl %ebp
+	movl %esp, %ebp
+
+	#pushl %ebx
+	#pushl %esi
+	#pushl %edi
+	
+	
+#Body	
 	movl $0, %eax			#Acumulador
-	movl 4(%esp), %ebx		#n
+	movl 8(%ebp), %ebx		#n
 	
 loop:	
 	cmpl $0, %ebx		
@@ -26,4 +34,15 @@ negative:
 	jmp loop
 	
 fim:	
+
+
+#Epilogue
+	#popl %edi
+	#popl %esi
+	#popl %ebx
+	
+	movl %ebp, %esp
+	popl %ebp
+	
 	ret
+	

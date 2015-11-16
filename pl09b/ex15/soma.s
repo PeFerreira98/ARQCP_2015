@@ -1,11 +1,9 @@
-
 .section .data
-
 .section .text
+.global menor_data_s
 
-.global menor_data
+menor_data_s:
 
-menor_data:
 #Prologue
 	pushl %ebp
 	movl %esp, %ebp
@@ -13,11 +11,12 @@ menor_data:
 	pushl %ebx
 	pushl %esi
 	#pushl %edi
-	
+
+
+#Body
 	movl 8(%ebp), %ebx		#data 1
 	movl 12(%ebp), %esi		#data 2
 	
-
 	movl $0xFFFFFFFF, %eax
 	shrl $16, %eax			#mascara para o ano (32-16 = 16) tendo 16 bits ligados à direita
 	movl %ebx, %edx			#mov para nao perdermos os registos
@@ -50,7 +49,6 @@ menor_data:
 
 
 comparar_anos:
-	
 	cmpl %edx, %ecx		#compara a 2ª data com a 1ª
 	jl fim
 	
@@ -58,7 +56,6 @@ comparar_anos:
 	jmp fim
 	
 comparar_mes:
-	
 	cmpl %edx, %ecx
 	jl fim
 	
@@ -66,6 +63,8 @@ comparar_mes:
 	
 fim:
 	movl %esi, %eax	
+	
+	
 #Epilogue
 	#popl %edi
 	popl %esi
@@ -74,5 +73,4 @@ fim:
 	movl %ebp, %esp
 	popl %ebp
 	
-		
 	ret

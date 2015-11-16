@@ -1,12 +1,9 @@
-
 .section .data
-
 .section .text
-
 .global menor
 
 menor:
-	
+
 	movl 4(%esp), %eax
 	movl 8(%esp), %edx
 	movl 12(%esp), %ecx
@@ -34,4 +31,5 @@ terElemento_primElemento:
 	
 fim:
 	movl %edx, %eax
+	
 	ret
