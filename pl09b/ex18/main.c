@@ -8,15 +8,13 @@ int main(){
 	int x = 131072; //3byte = 2
 	int res = 0;
 	
-	res = soma_multiplos_x_c (vec, x);
-
-	printf("\nresult in c = %d\n", res);
+	res = soma_multiplos_x_s (vec, x);
+	printf("\nresult in s = %d\n", res);
 	
 	res = 0;
+	res = soma_multiplos_x_c (vec, x);
+	printf("\nresult in c = %d\n", res);
 	
-	res = soma_multiplos_x_s (vec, x);
-	
-	printf("\nresult in s = %d\n", res);
 	
 	return 0;
 }
