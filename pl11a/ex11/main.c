@@ -29,7 +29,8 @@ int main(void){
 	}
 	
 	count = conta_pares(matrix,y,k);
-	 printf("pares = %d ", count);
+	printf("pares = %d ", count);
+	
 	return 0;
 }
 

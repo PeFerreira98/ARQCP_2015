@@ -24,30 +24,31 @@ conta_pares:
 	movl 12(%ebp), %edx		#y
 	movl 12(%ebp), %ebx		#k
 	
-	imull %edx, %ebx		#para sabermos o tramanho total da matriz		
+	imull %edx, %ebx		#para sabermos o tamanho total da matriz		
 	movl $0, %eax			#inicializar o contador de pares a 0
 
 loop:
 	cmpl aux, %ebx			#comparaçao com o final da matriz
 	je fim
 
-	movl (%esi), %ecx		#conteudo da matriz[y][k]
+	movl (%esi), %ecx		#conteudo da matriz[y]
 
 	andl $1, %ecx			#máscara lógica para descobrir se é par
 	cmpl $0, %ecx
 	je count
+	
 cont:
-	addl $4, %esi
-	incl aux
+	addl $4, %esi			#esi += 4
+	incl aux				#aux++
 	jmp loop
 	
 count:
 	cmpl $0, (%esi)			#para saber se o numero em questao é 0 (neutro)
 	je cont
 	
-	addl $1, %eax
-	addl $4, %esi
-	incl aux
+	addl $1, %eax			#eax++
+	addl $4, %esi			#esi += 4
+	incl aux				#aux++
 	
 	jmp loop
 	
