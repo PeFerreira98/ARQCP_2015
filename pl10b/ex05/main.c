@@ -17,8 +17,9 @@ int main(void){
 		(*p).nota[i] = notas[i];
 	}
 	
-	count = procura_maiores(p, 12, maiores);
+	count = procura_maiores(p, 15, maiores);
 	printf("%d \n", count);
+	
 	return 0;
 }
 
