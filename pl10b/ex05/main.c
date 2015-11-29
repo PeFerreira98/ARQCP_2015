@@ -17,8 +17,10 @@ int main(void){
 		(*p).nota[i] = notas[i];
 	}
 	
-	count = procura_maiores(p, 15, maiores);
+	count = procura_maiores(p, 10, maiores);
 	printf("%d \n", count);
+	
+	for (i = 0; i < count; i++) printf ("%d ", *(maiores + i));
 	
 	return 0;
 }
