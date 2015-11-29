@@ -7,7 +7,7 @@ int main(void){
 	Aluno p2;
 	Aluno *p = &p2;
 		
-	int count,i;
+	int count,i, minima = 10;
 	
 	int *maiores = NULL;
 	maiores = (int*) malloc(1*sizeof(int));
@@ -17,10 +17,12 @@ int main(void){
 		(*p).nota[i] = notas[i];
 	}
 	
-	count = procura_maiores(p, 10, maiores);
-	printf("%d \n", count);
+	count = procura_maiores(p, minima, maiores);
+	printf("Notas superiores a %d: %d -> ", minima, count);
 	
 	for (i = 0; i < count; i++) printf ("%d ", *(maiores + i));
+	
+	free(maiores);
 	
 	return 0;
 }

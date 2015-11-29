@@ -4,24 +4,21 @@
 	
 int procura_maiores (Aluno *a, int minima, int *maiores){
 
-	int flag = 0, count = 0, i;
+	int count = 0, i;
 	
 	for (i = 0; i < 10; i++){
 		if((*a).nota[i] > minima){
-			if(flag==0){
+			if(count==0){
 				*maiores = (*a).nota[i];
-				flag = 2;
 				count++;
 			}else{
-				maiores = (int*) realloc (maiores, flag*sizeof(int));
+				maiores = (int*) realloc (maiores, (count+1)*sizeof(int));
 				*(maiores + count) = (*a).nota[i];	
 				count++;
-				flag++;
 			}
-			
 		}
 	}
-	free(maiores);
+	
 	return count;
 	
 }
