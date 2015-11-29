@@ -1,1 +1,1 @@
-void insere_dados (Aluno *p, int numero, char *nome, char *morada, int idade);
+int procura_maiores (Aluno *a, int minima, int *maiores);
